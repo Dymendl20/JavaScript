@@ -1,0 +1,321 @@
+//
+//// =============================================
+//// //      Votre formation PHP/MySQL
+//// =============================================
+//
+////    Introduction au langage PHP
+//
+Présentation de la formation Php    02:13
+La programmation Web    01:26
+HTML, Le langage Web côté client    02:00
+Langue du document  01:18
+Images, vidéos, sons    02:01
+Styles CSS  02:13
+Squelette standard HTML5    01:27
+Sélecteurs CSS  02:24
+Sélecteurs de pseudo-classe 00:46
+Exercice    03:00
+Formulaires     06:14
+Exercice sur les formulaires    02:39
+Tableaux    00:32
+Exercice sur les tableaux   01:37
+Gestion événementielle      01:18
+Exercice        02:46
+Programmer côté client ou côté serveur ?        00:55
+//
+////    Environnement logiciel
+//
+Installation de Notepad++ et de WAMP Server     03:01
+WAMP Server s'est-il bien installé ?    02:22
+//
+////    Premiers pas en PHP 5
+//
+Saisir du code PHP et le tester dans WAMP Server    02:36
+Caractères spéciaux     01:04
+Commentaires        00:30
+Types de données        04:32
+PHP MySQL - Casting     02:04
+Variables       01:32
+Concaténer des chaînes      00:43
+Opérateurs élémentaires     01:10
+Constantes      00:40
+Opérateurs de comparaison       01:01
+Opérateurs logiques     00:43
+Tests       03:06
+Boucles     01:28
+Exercice sur les boucles        01:42
+Tableaux numérotés      01:08
+Exercice    01:00
+La boucle foreach()     00:41
+Exercice sur la boucle foreach()        00:41
+Tableaux associatifs        01:43
+Exercice sur les tableaux associatifs       01:26
+Recherche dans un tableau associatif        00:54
+Tableaux imbriqués      00:36
+Exercice        02:29
+Convertir une chaine en un tableau numéroté     01:11
+Exercice sur les tableaux numérotés     00:46
+Convertir un tableau numéroté en une chaîne     01:15
+Trier un tableau numéroté       01:01
+Trier un tableau associatif     01:36
+Exercice sur le tri des tableaux associatifs        02:36
+Filtrer un tableau      03:03
+Exercice sur le filtrage de tableaux        03:14
+Modifier aléatoirement l'ordre des éléments d'un tableau        00:41
+Exceptions      02:13
+Exercice sur les exceptions     01:01
+//
+////       Fonctions
+//
+Définition d'une fonction
+00:48
+Exercice sur les fonctions
+02:19
+Passage de paramètres par référence
+01:21
+Portée des variables
+03:47
+Les fonctions mathématiques
+00:55
+Evitement du Cross-Site Scripting (XSS)
+01:31
+Exercice sur htmlspecialchars()
+00:50
+Encryptage des mots de passe
+01:15
+Protéger une adresse e-mail
+01:48
+Affichage avec mise en forme
+00:57
+Extraction de valeurs mises en forme
+01:17
+Exercice sur la fonction sscanf()
+01:23
+Les autres fonctions dédiées aux chaînes de caractères
+00:40
+Exercice sur strpos() et substr()
+02:03
+Les expressions régulières
+00:32
+Recherche d'une séquence dans une chaîne
+02:57
+Classes abrégées
+03:11
+Exercice sur les expressions régulières
+02:13
+Exercice – Plus loin avec les expressions régulières
+01:55
+Exercice – Suppression des espaces multiples
+01:41
+Les fonctions de traitement des dates et heures
+02:10
+Exercice sur les dates
+01:05
+Localisation de dates
+01:45
+Travailler avec une autre date que la date courante
+00:49
+Exercice sur les fonctions setlocale(), strftime() et strftotime()
+01:30
+Inclusion de code avec l'instruction include
+00:53
+//
+////    Transmission de données
+//
+Transmission de données par l'URL
+03:26
+Transmission de données simples par formulaires
+02:38
+Exercice – Protection d'une page par un mot de passe
+02:04
+Transmission de fichiers par formulaire
+05:57
+Envoyer un E-mail à partir d'un formulaire
+01:33
+//
+////    Superglobales, cookies et sessions
+//
+Variables superglobales
+02:21
+Sessions Web
+01:18
+Exercice sur les sessions Web
+03:26
+Cookies
+03:18
+Exercice sur les cookies
+03:17
+//
+////    Manipulation de fichiers
+//
+Droits d'accès sur un serveur distant
+01:33
+Accéder à un fichier
+01:15
+Lecture de données dans un fichier
+00:40
+Exercice sur la lecture de fichiers sur le serveur
+01:31
+Une erreur classique
+01:14
+Ecriture de données dans un fichier
+01:01
+Exercice sur l'écriture de données dans un fichier serveur
+01:49
+//
+////    Principes de la programmation Orientée Objet
+//
+La programmation orientée objet
+01:46
+Encapsulation
+01:18
+Héritage
+00:51
+Polymorphisme
+01:12
+Interfaces
+02:53
+//
+////    Programmation Orientée Objet en PHP 5
+//
+Premiers pas en POO
+01:39
+Instanciation d'une classe
+01:39
+Lecture et modification des propriétés de type private
+01:08
+Constructeur et destructeur
+02:04
+Exercice sur les classes
+03:33
+//
+////    Services Web
+//
+Introduction aux services Web
+01:45
+Définition d'un service Web
+02:47
+Utiliser le service Web
+01:34
+//
+////    MySQL
+//
+Créer une table
+01:53
+Introduction à MySQL
+01:15
+La console d'administration Web phpMyAdmin
+02:04
+Entrer des données dans une table
+00:55
+Exercice sur phpMySQL
+01:35
+Interroger une table
+01:08
+Supprimer une table
+00:38
+Importer et exporter des données
+01:01
+//
+////    La console MySQL
+//
+Introduction à la console MySQL
+02:03
+Types de champs
+01:17
+Quelques commandes intéressantes
+05:17
+Exercice sur la console MySQL
+04:03
+Syntaxe du WHERE
+01:02
+Administration des utilisateurs
+02:57
+Exercice sur la gestion des utilisateurs
+04:05
+//
+////    Se connecter à une table en PHP avec MySQL
+//
+Accès à une base MySQL via PDO
+01:53
+Connexion objet avec PDO
+03:00
+Exercice – Intégration de données dans la base
+02:57
+127 Exercice sur l'extraction de données
+01:38
+Exercice – Plus loin dans l'extraction de données
+01:44
+Utilisation de variables PHP dans des requêtes
+00:33
+Exercice sur les requêtes préparées
+01:13
+//
+////    Manipuler les données d'une table avec MySQL
+//
+Interrogation d'une table
+01:55
+Fonctions SQL
+02:20
+Exercice – Extraction de données dans phpMyAdmin
+01:57
+GROUP BY
+00:29
+HAVING
+00:44
+Jointures
+03:20
+Exercice sur les jointures simples
+02:21
+Jointures complexes
+02:51
+Exemples de jointures complexes
+03:07
+//
+////    Créer une base de données, une table et des enregistrements en PHP
+//
+Créer une table
+01:36
+Créer une base de données
+00:49
+Ajouter des données dans une table
+01:01
+Exercice sur la création de tables et de données en PHP
+02:35
+//
+////    Mise à jour et suppression des données
+//
+Mise à jour de données
+00:36
+Exercice sur la mise à jour des données dans une table
+01:41
+Suppression de données
+00:24
+Exercice sur la suppression de données dans une table
+01:05
+Suppression d'une table et d'une base de données
+00:58
+//
+////    Organiser le code selon l'architecture MVC
+//
+Qu'est-ce que MVC et pourquoi l'utiliser ?
+01:35
+Développer un projet selon l'architecture MVC
+01:17
+Modèle
+01:36
+Contrôleur
+01:43
+Vue
+01:07
+Frameworks MVC
+00:24
+//
+////    Annexes
+//
+Modifier le fichier php.ini
+01:13
+Protéger un dossier avec .htaccess et .htpasswd
+01:56
+Site officiel et documentation
+01:22

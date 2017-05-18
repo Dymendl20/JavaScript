@@ -1,0 +1,433 @@
+//
+///// ***********************************************
+//// \\     Tuto PHP/MySQL | Créer une table
+////// **********************************************
+//
+//Le volet gauche de la fenêtre dresse la liste des bases de données existantes.
+//Pour créer une nouvelle base de données, sélectionnez l'onglet Bases de données,
+//choisissez un nom pour la nouvelle base de données et cliquez sur Créer.
+//Pour créer une table dans la base de données formation, cliquez sur son nom dans le volet gauche,
+//choisissez un nom pour la table (Nom) et un nombre de champs (Nombre de colonnes) et cliquez sur Exécuter.
+//
+//Maintenant, il ne vous reste plus qu'à choisir le nom et le type des champs et à valider pour créer la table.
+//Pour l'instant, nous allons nous contenter de créer des champs très simples :
+//  nom, de type TEXT ;
+//  prenom, de type TEXT ;
+//  login, de type TEXT ;
+//  password, de type TEXT ;
+//  email, de type TEXT.
+//Une fois ces informations définies, cliquez sur Sauvegarder pour créer la table.
+//
+///// ***************************************************
+////\\      Tuto PHP/MySQL | Introduction à MySQL
+///// ***************************************************
+//
+//Les bases de données permettent de stocker des données de tous types, de façon organisée et durable, contrairement aux variables PHP.
+//
+//Dans cette formation, vous allez apprendre à utiliser le SGBD (Système de Gestion de Bases de Données) MySQLi (pour MySQL Improved).
+//Apparu dans la version 4.1.3 de MySQL, cette version améliorée de MySQL offre plusieurs avantages :
+//Accès objet aux bases de données ;
+//Support des instructions Prepared et Multiple ;
+//Support des transactions ;
+//Débogage avancé.
+//
+//Pour créer une base de données, ou encore pour lire ou écrire dans une table, vous utiliserez le langage SQL.
+//Les commandes SQL seront passées au SGBD via des instructions PHP ou "à la main",
+//via la console d'administration Web phpMyAdmin ou la console MYSQL.
+//Ces trois possibilités vont être analysées en détail dans les pages suivantes.
+//
+///// **********************************************************************
+////\\      Tuto PHP/MySQL | La console d'administration Web phpMyAdmin
+///// **********************************************************************
+//
+//Pour accéder à la console d'administration Web phpMyAdmin, cliquez sur l'icône de WAMPServer dans la zone de notification et
+//choisissez phpMyAdmin dans le menu.
+//
+//Tapez root dans la zone de texte Utilisateur, laissez la zone de texte Mot de passe vide et cliquez sur Exécuter.
+//Vous êtes maintenant dans l'interface d'administration de phpMySQL.
+//
+//Utilisateur et mot de passe
+//
+//L'utilisateur root sans mot de passe est l'utilisateur par défaut de phpMySQL. Si vous le souhaitez,
+//vous pouvez sécuriser votre connexion en choisissant un autre nom d'utilisateur et un mot de passe.
+//Sélectionnez l'onglet Utilisateurs. Sur la ligne root/localhost, cliquez sur Changer les privilèges.
+//
+//Déplacez-vous dans le groupe d'options Changement des informations de connexion/Copie d'utilisateur et
+//choisissez un nom d'utilisateur et un mot de passe. Assurez-vous de bien noter ces informations et cliquez sur Exécuter pour les mémoriser.
+//Cliquez sur l'icône Quitter dans la partie supérieure de l'onglet gauche pour vous déconnecter.
+//
+//Fermez la page de phpMyAdmin. Terminez WAMPServer et relancez-le,
+//puis connectez-vous sur phpMyAdmin en cliquant sur l'icône de WAMPServer dans la zone de notification et en choisissant phpMyAdmin dans le menu.
+//Il ne vous reste plus qu'à entrer vos informations de connexion pour vous connecter.
+//
+//// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+////\\      Tuto PHP/MySQL | Entrer des données dans une table
+///// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//
+//Pour entrer des données dans la table utilisateurs de la base formation,
+//développez l'élément formation, cliquez sur utilisateurs, puis basculez sur l'onglet Insérer.
+//Utilisez les cinq zones de texte multilignes pour entrer les données.
+//Pour vous entraîner, saisissez les données suivantes :
+//
+//nom
+//prenom
+//login
+//password
+//email
+//Durand
+//Eric
+//eDurand
+//pass1
+//e.durand@fai.com
+//Terec
+//Pierre
+//pTerec
+//pass2
+//p.terec@fai.com
+//Valmont
+//Judy
+//jValmont
+//pass3
+//j.valmont@fai.com
+//Crouzet
+//Patrick
+//pCrouzet
+//pass4
+//p.crouzet@fai.com
+//Vertec
+//Pierre
+//pVertec
+//pass5
+//p.vertec@fai.com
+//
+//Faites une pause dans la vidéo. Poursuivez la lecture lorsque toutes les données auront été saisies.
+//
+//Sélectionnez l'onglet Afficher.
+//
+///// **************************************************
+////\\      Tuto PHP/MySQL | Interroger une table
+///// *************************************************
+//
+//Pour sélectionner certains enregistrements d'une table en fonction de leur contenu, sélectionnez l'onglet SQL.
+//Une requête vous est proposée par défaut :
+//SELECT * FROM 'utilisateurs' WHERE 1
+//Cliquez sur Exécuter pour l'exécuter. Comme vous pouvez le voir,
+//tous les enregistrements de la table sont sélectionnés et affichés.
+//Sans entrer dans le détail, je vais vous montrer comment sélectionner les enregistrements dont le champ prenom a pour valeur Pierre.
+//Cliquez sur l'onglet pour réinitialiser son contenu. Modifiez la requête SQL comme ceci :
+//
+//SELECT * FROM `utilisateurs` WHERE prenom="Pierre"
+//
+//Cliquez sur Exécuter. Seuls les deux enregistrements dont le champ prenom vaut Pierre sont maintenant sélectionnés.
+//
+///// *************************************************************
+////\\      Tuto PHP/MySQL | Supprimer une table
+////// ************************************************************
+//Pour supprimer une table, cliquez sur la base de données dans laquelle elle est stockée dans le volet droit de phpMyAdmin,
+//cochez la case affichée devant le nom de la table à supprimer puis cliquez sur Supprimer.
+//
+//Remarque
+//
+//Vous pouvez également vider la table, c'est-à-dire supprimer son contenu en conservant sa structure.
+//Pour cela, sélectionnez la table à vider et cliquez sur Vider.
+//
+///// ************************************************************
+////\\      Tuto PHP/MySQL | Importer et exporter des données
+///// *************************************************************
+//
+//Il peut parfois être utile d'importer des données dans une table depuis un fichier CSV, SQL, XML, etc.
+//Pour cela, sélectionnez la table dans laquelle doit se faire l'importation dans le volet gauche, basculez sur l'onglet Importer,
+//remplissez le formulaire d'importation et cliquez sur Exécuter.
+//
+//Inversement, pour exporter le contenu d'une table dans un fichier CSV, JSON (JavaScript Object Notation), SQL, XML, etc.,
+//sélectionnez la table à exporter dans le volet gauche, basculez sur l'onglet Exporter,
+//choisissez un format d'exportation dans la liste et cliquez sur Exécuter.
+//
+///// ================================================================
+////\\      Tuto PHP/MySQL | Introduction à la console MySQL
+////// ===============================================================
+//
+//La console MySQL peut être utilisée pour lancer rapidement des commandes SQL.
+//Connexion en tant que root
+//Pour ouvrir la console MySQL, cliquez sur l'icône de WAMPServer dans la zone de notifications, pointez MySQL et cliquez sur Console MySQL.
+//La console se connecte à MySQL en utilisant le compte root. Le mot de passe de ce compte vous est demandé.
+//Comme aucun mot de passe n'est affecté au compte root, appuyez simplement sur la touche Entrée du clavier.
+//
+//Connexion autre que root
+//
+//Si vous voulez vous connecter sous un autre nom d'utilisateur, ouvrez une fenêtre Invite de commandes
+//dans le dossier c:\wamp\bin\mysql\mysql5.6.12\bin et tapez la commande suivante :
+//
+//mysql –u 'nom' –p
+//Où nom est le nom d'utilisateur avec lequel vous voulez vous connecter.
+//Entrez le mot de passe associé à l'utilisateur et appuyez sur la touche Entrée pour vous connecter.
+//Si aucun mot de passe n'est associé à l'utilisateur, appuyez simplement sur la touche Entrée.
+//
+//Modification du mot de passe associé à un utilisateur
+//
+//Reportez-vous à la section intitulée "Administration des utilisateurs" pour savoir comment changer le mot de passe associé à un utilisateur quelconque (y compris root).
+//
+///// =============================================
+////\\      Tuto PHP/MySQL | Types de champs
+///// =============================================
+//
+//Lorsque vous créez une table MySQL, vous devez définir le type de données des champs de la table.
+//Il existe trois grands types de données :
+//
+//Numérique
+//Chaine de caractères
+//Date et heure
+//Les champs numériques peuvent être du type
+//Type
+//Signification
+//tinyint
+//
+//Occupe 1 octet. Peut stocker des nombres entiers compris entre -128 à 127 si l'attribut UNSIGNED n'est pas spécifié,
+//ou compris entre 0 et 255 dans le cas contraire.
+//
+//smallint
+//
+//Occupe 2 octets. Ce type de données peut stocker des nombres entiers compris entre -32 768 à 32 767
+//si l'attribut UNSIGNED n'est pas spécifié, ou compris entre 0 et 65 535 dans le cas contraire.
+//
+//mediumint
+//
+//Occupe 3 octets. Ce type de données peut stocker des nombres entiers compris entre -8 388 608 et 8 388 607
+//si l'attribut UNSIGNED n'est pas spécifié, ou compris entre 0 et 16 777 215 dans le cas contraire.
+//
+//int
+//
+Occupe 4 octets. Ce type de données peut stocker des nombres entiers compris entre -2 147 483 648 et 2 147 483 647 si l'attribut UNSIGNED n'est pas spécifié, ou compris entre 0 à 4 294 967 295 dans le cas contraire.
+//
+//bigint
+//
+//Occupe 8 octets. Ce type de données stocke les nombres entiers compris entre -9 223 372 036 854 775 808 et 9 223 372 036 854 775 807
+//si l'attribut UNSIGNED n'est pas spécifié, ou compris entre 0 à 18 446 744 073 709 551 615 dans le cas contraire.
+//
+//float
+//
+//Occupe 4 octets. Ce type de données permet de stocker des nombres flottants à précision simple,
+//compris entre -1.175494351E-38 et 3.402823466E+38 (non UNSIGNED) ou entre 0 et 3.402823466E+38 (UNSIGNED).
+//
+//double ou real
+//
+//Occupe 8 octets. Stocke des nombres flottants à double précision compris entre -1.7976931348623157E+308 et -2.2250738585072014E-308,
+//et entre 2.2250738585072014E-308 et 1.7976931348623157E+308 (non UNSIGNED).
+//Si l'attribut UNSIGNED est précisé, les nombres négatifs sont retirés.
+//
+//Les champs chaines de caractères peuvent être du type
+//
+//Type
+//Signification
+//
+//Char
+//
+//Chaîne de caractères de taille fixe
+//Varchar
+//
+//Chaîne de caractères de longueur variable comprise entre 1 et 255 caractères
+//
+//tinyblob
+//
+//Chaîne de 0 à 255 caractères (sensible à la casse)
+//tinytext
+//
+//Chaîne de 0 à 255 caractères (insensible à la casse)
+//
+//Blob
+//
+//Chaîne de 0 à 65 535 caractères (sensible à la casse)
+//
+//Text
+//
+//Chaîne de 0 à 65 535 caractères (insensible à la casse)
+//
+//mediumblob
+//
+//Chaîne de 0 à 16 777 215 caractères (sensible à la casse)
+//
+//mediumtext
+//
+//Chaîne de 0 à 16 777 215 caractères (insensible à la casse)
+//
+//longblob
+//
+//Chaîne de 0 à 4 294 967 295 caractères (sensible à la casse)
+//
+//longtext
+//
+//Chaîne de 0 à 4 294 967 295 caractères maximum (insensible à la casse)
+//
+//Les champs date et heure peuvent être du type
+//
+//Type
+//
+//Signification
+//
+//date
+//
+//Occupe 3 octets. Date au format AAAA-MM-JJ, entre 1000-01-01 et 9999-12-31
+//
+//time
+//
+//Occupe 3 octets. Date au format AAAA-MM-JJ  entre1000-01-01 et 9999-12-31
+//
+//datetime
+//
+//Occupe 8 octets. Date et heure au format AAAA-MM-JJ HH:MM:SS entre 1000-01-01 00:00:00 et 9999-12-31 23:59:59
+//
+//year
+//
+//Occupe 1 octet. Année à 2 ou 4 chiffres entre 1901 et 2155 ( 4 chiffres) ou entre 1970 et 2069 (2 chiffres)
+//
+//timestamp
+//
+//Occupe 4 octets. Date codée sous une forme numérique et comprise entre 1970-01-01 00:00:00 et l'année 2037
+//
+///// ==============================================================
+////\\      Tuto PHP/MySQL | Quelques commandes intéressantes
+////// ==============================================================
+//
+//Dans cette rubrique, vous allez découvrir quelques commandes SQL intéressantes.
+//Il ne s'agit que du B.A. BA. Pour avoir une vision plus globale des commandes SQL,
+//consultez le document http://oandreau.free.fr/supports/sql.pdf ou
+//interrogez votre moteur de recherche Web préféré sur le terme "commandes SQL".
+//
+//Commande	Effet
+//
+//La commande SHOW DATABASES;	Affiche toutes les bases de données
+//USE nom;	Sélectionne la base de données nom
+//SHOW tables;	Affiche les tables de la base de données sélectionnée
+//CREATE DATABASE nom;	Crée une base de données
+//"CREATE TABLE nom[
+//champ1 type1(taille),
+//champ2 type2(taille),
+//etc.);"	Crée la table nom dans la base de données courante
+//DROP DATABASE nom Supprime la base de données nom
+//DROP TABLE nom;	Supprime la table nom
+//SELECT * FROM table;	Affiche tous les enregistrements de la table spécifiée
+//SELECT nom FROM table;	Affiche toutes les valeurs du champ nom de la table spécifiée.
+//SELECT * FROM table WHERE ch=valeur;	Affiche tous les champs de la table spécifiée pour lesquels le champ ch vaut valeur.
+//SELECT * FROM table WHERE ch=valeur ORDER BY ch2 ASC;
+//Affiche tous les champs de la table spécifiée pour lesquels le champ ch vaut valeur,
+//en classant les réponses par champ ch2 croissants.
+//SELECT COUNT(*) FROM table;	Compte le nombre d'enregistrements de la table spécifiée.
+//DESCRIBE nom;	Donne des informations sur les champs de la table nom
+//ALTER TABLE nom MODIFY(champ, type(taille));	Modifie le type de données du champ spécifié de la table nom
+//INSERT INTO nom VALUE(val1, … valN);	Insère un enregistrement dans la table nom. Les valeurs à insérer sont précisées entre les parenthèses.
+//UPDATE nom SET champ=valeur;	Met à jour le champ spécifié avec la valeur spécifiée dans tous les enregistrements de la table nom
+//UPDATE nom SET champ1=valeur1, champ2=valeur2, champ3=valeur3;	Met à jour les champs champ1 à champ3 dans tous les enregistrements de la table nom
+//UPDATE nom SET champ=valeur WHERE champ2=valeur2;	Dans la table nom, met à jour le champ spécifié avec la valeur spécifiée dans les enregistrements pour lesquels champ2 vaut valeur2
+//UPDATE nom SET champ1=valeur1, champ2=valeur2 WHERE champ3=valeur3;
+//Dans la table nom, met à jour les champs champ1 et champ2 dans les enregistrements pour lesquels champ3 vaut valeur3
+//DELETE FROM nom;	Supprime tous les enregistrements de la table nom.
+//DELETE FROM nom WHERE champ=valeur;	Supprime tous les enregistrements de la table nom pour lesquels champ vaut nom
+//ROLLBACK	Annule la suppression d'enregistrements
+//COMMIT	Valide la suppression d'enregistrements
+//Voici deux exemples élémentaires pour comprendre comment utiliser des requêtes SQL dans la console MySQL.
+//Pour afficher tous les enregistrements de la table utilisateurs,
+//commencez par sélectionner la table formation avec la commande SQL USE, puis lancez une requête SELECT.
+//Supposons maintenant que vous vouliez sélectionner les enregistrements de la table utilisateurs dont le champ prenom vaut "Pierre".
+//
+///// ==============================================================
+////\\\\        Tuto PHP/MySQL | Exercice sur la console MySQL
+///// ==============================================================
+//
+//Utilisez la console MySQL pour effectuer les actions suivantes :
+//
+//Créez la base de données testconsole
+//
+//Créez la table testtable composée des champs suivants :
+//
+//Champ
+//Type
+//nom
+//varchar(50)
+//prenom
+//varchar(50)
+//compteurVisite
+//smallint
+//derniereVisite
+//timestamp
+//
+//Affichez la structure de la table.
+//
+//Ajoutez les valeurs suivantes dans la table testtable :
+
+  Pierre, Dubur, 34, NOW()
+
+  Chantal, Garnier, 128, NOM()
+
+  Jean, Dupont, 2, NOW()
+
+  Belle, Vercor, 45, NOW()
+
+  Lister les données contenues dans la table
+
+  Affecter la valeur 200 au champ compteurdevisite de Jean Dupont
+
+  Supprimer l'enregistrement de Pierre Dubur
+
+  Compter le nombre d'enregistrements dans la table testtable
+
+  Supprimer la base de données testconsole
+
+  Solution
+
+  Faites une pause sur la vidéo et effectuez les actions demandées. Vous pourrez poursuivre la vidéo pour prendre connaissance des solutions.
+
+  Pour créer la base de données testconsole, tapez la commande suivante :
+
+  CREATE DATABASE testconsole;
+
+  Pour créer la table testtable contenant les champs nom de type varchar(50), le champ prenom de type varchar(50), le champ compteurVisite de type Smallint et le champ derniereVisite de type Timestamp, vous utiliserez la commande suivante :
+
+  CREATE TABLE testtable(
+
+  nom varchar(50),
+
+  prenom varchar(50),
+
+  compteurvisite smallint,
+
+  dernierevisite timestamp);
+
+  Pour afficher la structure de la table, la commande à utiliser est :
+  DESCRIBE testtable;
+
+  Pour ajouter les données demandées dans la table, les commandes à utiliser sont les suivantes :
+
+  INSERT INTO testtable VALUE('Pierre', 'Dubur', 34, NOW());
+
+  INSERT INTO testtable VALUE('Chantal', 'Garnier', 128, NOW());
+
+  INSERT INTO testtable VALUE('Jean', 'Dupont', 2, NOW());
+
+  INSERT INTO testtable VALUE('Belle', 'Vercor', 45, NOW());
+
+  Pour lister les données contenues dans la table, vous utiliserez la commande suivante :
+
+  SELECT * FROM testtable;
+
+  Pour affecter la valeur 200 au champ compteurdevisite de Jean Dupont, la commande à utiliser est la suivante :
+
+  UPDATE testtable SET compteurvisite=200 WHERE nom='Jean' && prenom='Dupont';
+
+  Après l'exécution de cette commande, le champ a bien été modifié :
+
+  Pour suppression l'enregistrement de Pierre Dubur, la commande à utiliser est la suivante :
+
+  DELETE FROM testtable WHERE nom='Pierre' && prenom='Dubur';
+
+  Après l'exécution de cette commande, l'enregistrement a bien été supprimé :
+
+  Pour connaitre le nombre d'enregistrements dans la table testtable, la commande à utiliser est la suivante :
+
+  SELECT COUNT(*) FROM testtable;
+
+  Enfin, pour supprimer la base de données testconsole, vous utiliserez la commande suivante :
+
+
+
+  DROP DATABASE testconsole;
+//

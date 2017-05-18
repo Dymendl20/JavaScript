@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Entrainement - Mise en forme php</title>
+    </head>
+    <body>
+      <form name="MonFormulaire" method="post" action=
+              "traitement.php">
+          <table><tr><td><label>Prénom</label></td>
+              <td><input type="text" name="prenom"></td></tr>
+
+              <tr><td><label>Nom</label></td>
+                  <td><input type="text" name="nom"></td></tr>
+
+              <tr><td><label>Mot de passe</label></td>
+                  <td><input type="password" name="mdp"></td></tr>
+
+              <tr><td><label>Age</label></td>
+              <td><select name="age">
+                  <option><20 ans</option>
+                  <option>20 à 50 ans</option>
+                  <option>50 ans</option>
+              </select></td></tr>
+
+              <tr><td><label>Observations</label></td>
+              <td><textarea name="observations" cols="40" rows="4"
+              ></textarea></td></tr>
+
+              <tr><td><input type="submit" name="nom" value="Envoyer"></td>
+                  <td><input type="reset" name="Nom" value="Annuler"></td></tr>
+          </table>
+      </form>
+    </body>
+</html>

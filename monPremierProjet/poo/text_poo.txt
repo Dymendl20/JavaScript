@@ -1,0 +1,431 @@
+//
+///// ***************************
+//// \\     POO
+///// ***************************
+//
+//La programmation orientée objet (POO) a essentiellement deux avantages. Elle :
+//
+//*facilite l'organisation du code et donc le développement ;
+//*permet de définir des modules réutilisables.
+//
+//La poo repose sur trois notions fondamentales : l'encapsulation, l'héritage et le polymorphisme.
+//
+//Classes, instances et composants.
+//
+//Les classes définissent des structures composées de variables et de fonctions.
+//Pour utiliser les termes propres à la POO, les variables d'une classe sont appelées propriétés.
+//Quant aux fonctions de la classe, elles sont appelées méthodes.
+//
+//Les instances, c'est-à-dire les utilisations d'un type classe, sont appelées des objets.
+//Les variables et fonctions d'une classe sont appelés composants ou membres de la classe.
+//
+//Si vous avez du mal à vous y retrouver avec tous ces nouveaux termes, nous allons faire une analogie.
+//Considérez une classe comme une usine qui fabrique des voitures.
+//Les instances de l'usine (la classe) sont des voitures (les objets).
+//La cylindrée, la couleur, le type des pneus, etc. sont des caractéristiques (propriétés) propres à chaque voiture.
+//Selon les caractéristiques des voitures à fabriquer, il faut appliquer différents procédés de fabrication (méthodes).
+//
+///// ============================================================
+////        Encapsulation
+//// =============================================================
+//
+//Le terme "encapsulation" désigne le regroupement des variables et des fonctions au sein d'une seule et même entité : une classe.
+//Par défaut, toutes les propriétés et méthodes d'une classe sont de type public.
+//Ils sont donc utilisables et modifiables par toutes les instances de la classe.
+//Si nécessaire, vous pouvez également définir des propriétés et méthodes d'un autre type :
+//private : les propriétés et méthodes ne sont utilisables et modifiables que par la classe elle-même (pas dans les classes dérivées ni dans les objets) ;
+//protected : les propriétés et méthodes sont utilisables et modifiables par la classe elle-même et par ses classes dérivées. Par contre, elles sont inaccessibles aux objets qui découlent de la classe.
+//Getter et setter
+//Lorsqu'une propriété est de type private, seule la classe dans laquelle elle est définie peut lire son contenu ou la modifier.
+//Pour cela, on utilise des fonctions un peu particulières appelées getter et setter.
+//
+////// =======================
+////        Héritage
+///// ========================
+//
+//Il est possible de créer un nouveau type d'objet en prenant comme modèle un type objet déjà existant.
+//Le nouvel objet possèdera (héritera) les mêmes propriétés et les mêmes méthodes que son modèle,
+//avec toutefois la possibilité d'ajouter de nouvelles propriétés et/ou de nouvelles méthodes ou de redéfinir les méthodes existantes.
+//On dira que le nouvel objet est un objet dérivé ou un descendant de l'ancien.
+//Cette notion d'héritage permet de ne pas avoir à réécrire des méthodes déjà écrites.
+//D'autre part les corrections ou modifications du code pourront être réalisées plus rapidement et de façon plus sûre.
+//
+///// ==========================
+////        Polymorphisme
+///// ==========================
+//
+//La notion de polymorphisme est assez abstraite et peu utile en PHP.
+//Elle découle de la notion d'héritage.
+//Supposons qu'une classe Laser et trois classes dérivées CD, DVD et Blue aient été définies.
+//Les trois classes dérivées ont toutes les caractéristiques de la classe Laser.
+//Ainsi, des objets de type CD, DVD et Blue peuvent être traités comme des objets de type Laser.
+//Cependant, il est possible de surcharger les méthodes d'instance de la classe parente afin d'induire des comportements spécifiques aux classes dérivées.
+//
+//  class Laser {
+//
+//    public function caracteristiques() {
+//
+//      echo "Disque laser<br>";
+//
+//    }
+//
+//  }
+//
+//  class CD extends Laser{
+//
+//    public function caracteristiques() {
+//
+//      parent::caracteristiques();
+//
+//      echo "Capacité : 700 Mo<br>";
+//
+//    }
+//
+//  }
+//
+//  class DVD extends Laser {
+//
+//    public function caracteristiques() {
+//
+//      parent::caracteristiques();
+//
+//      echo "Capacité : 4,7 Go<br>";
+//
+//    }
+//
+//  }
+//
+//  class Blue extends Laser {
+//
+//    public function caracteristiques() {
+//
+//      parent::caracteristiques();
+//
+//      echo "Capacité : 25 Go<br>";
+//
+//    }
+//
+//  }
+//?>
+//
+//  Sans entrer dans le détail du code, vous pouvez comprendre que les classes héritées CD, DVD et Blue surchargent la méthode publique caracteristiques de la classe parente laser.
+//Elles conservent le comportement de la méthode parente (parent::caracteristiques();) et la complètent avec des informations qui leur sont spécifiques.
+//
+///// ======================
+/////   Interface
+///// ======================
+//
+//En programmation objet, les interfaces permettent d'indiquer quelles méthodes publiques une classe doit implémenter.
+//Leur principal intérêt est de garantir que toutes les classes qui l'implémentent donneront accès aux méthodes spécifiées dans l'interface.
+//
+//  L'utilisation d'interfaces trouve son utilité dans des projets impliquant plusieurs programmeurs ou développés de façon modulaire.
+//
+//  Voyons comment mettre en œuvre une interface dédiée à la formation PHP.
+//  Les classes qui implémenteront cette interface devront elles-mêmes implémenter les méthodes publiques programme() et pratique().
+//
+//  Voici le fichier interface.php correspondant :
+//
+//  <?php
+  interface formationPHP{
+    public function programme();
+    public function pratique();
+  }
+  ?>
+//
+//Nous allons maintenant définir deux classes qui implémentent l'interface formationPHP.
+
+//Voici le code de la classe debutant (debutant.class.php) :
+
+  <?php
+    require_once "interface.php";
+    class debutant{
+      public function programme() {
+        return "<ul><li>Instructions</li><li>Fichiers</li><li>Transmission de données</li></ul>";
+      }
+
+      public function pratique() {
+        return "Exercices pour appréhender le langage.<br>";
+      }
+    }
+  ?>
+//
+//Remarquez l'instruction require_once au début du listing, pour faire référence à l'interface.
+
+//Et voici le code de la classe avance (avance.class.php) :
+
+  <?php
+    require_once "interface.php";
+    class avance{
+      public function programme() {
+        return "<ul><li>Superglobales</li><li>POO</li><li>BDD</li></ul>";
+      }
+      public function pratique() {
+        return "Nombreux exercices de tous niveaux.<br>";
+      }
+    }
+  ?>
+
+//Il ne reste plus qu'à utiliser les classes debutant et avance en définissant un quatrième fichier PHP (formation.php) :
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8" />
+      <title>Utilisation des classes debutant et avance</title>
+    </head>
+    <body>
+      <?php
+        include_once("debutant.class.php");
+        include_once("avance.class.php");
+        $coursDebutant = new debutant;
+        $coursAvance = new avance;
+        echo "<b>Formation pour débutants PHP</b><br>";
+        echo "<i>Programme :</i><br>";
+        echo $coursDebutant->programme();
+        echo "<i>Pratique :</i><br>";
+        echo $coursDebutant->pratique();
+        echo "<br><b>Formation avancée PHP</b><br>";
+        echo "<i>Programme :</i><br>";
+        echo $coursAvance->programme();
+        echo "<i>Pratique :</i><br>";
+        echo $coursAvance->pratique();
+      ?>
+    </body>
+  </html>
+//
+//Les classes debutant et avancé sont incluses au début du script avec la fonction include_once.
+//Les objets $coursDebutant et $coursAvance sont alors créés en instanciant les classes debutant et avance.
+//Le texte Formation pour débutants est alors affiché en gras.
+//Puis le mot Programme est affiché en italique.
+//Pour obtenir le programme de la formation PHP pour débutants, on invoque la méthode programme de la classe coursDebutant.
+//Les notions abordées dans le programme sont alors affichées, retournées par la méthode programme.
+//Le texte pratique est alors affiché en italique puis la méthode pratique de l'objet coursDebutant est invoquée
+//pour afficher le type d'exercices effectués dans la formation débutant.
+//Des instructions du même type affichent le programme et le type d'exercices pratiqués dans la formation PHP avancée.
+//Exécutons ce code dans WAMP Server.
+//Les méthodes programme et pratique des objets coursDebutant et coursAvance sont bien accesibles et retournent bien les informations attendues.
+//
+///// ===============================
+////    Premier pas avec POO
+//// ================================
+//
+//Il est temps de passer à la pratique. Dans cette partie, vous allez écrire plusieurs scripts pour faire vos armes en POO PHP. Pour cela, nous allons travailler sur une classe spécialisée dans le traitement des chaînes de caractères. Cette classe contiendra plusieurs méthodes permettant de simplifier les manipulations des chaines de caractères.
+//
+//  Définition d'une classe
+//Pour définir une classe, il suffit d'utiliser le mot class suivi du nom de la classe. Par exemple :
+//  class chainePlus {
+//    // Une ou plusieurs instructions
+//  }
+//
+//Pour définir les propriétés de la classe, vous utiliserez le mot-clé :
+//  public si la propriété doit être accessible dans la classe, les classes dérivées et les objets ;
+//  private si la propriété doit être accessible dans la classe seulement ;
+//  protected si la propriété doit être accessible dans la class et ses classes dérivées.
+//
+//  Par exemple :
+//  private $nomProp;
+//  Où nomProm est le nom d'une propriété.
+//  Pour définir des fonctions membres, vous utiliserez cette syntaxe :
+//
+  public function nom(){
+
+    // Une ou plusieurs instructions
+
+    // $this->nomProp permet d'accéder à la propriété nomProp
+
+  }
+// Remarque
+//  Par convention, il est préconisé de sauvegarder la classe sous le nom nomClasse.class.php (où nomClasse est le nom de la classe).
+//
+///// ================================
+////  Instanciation d'une classe
+///// ================================
+//
+//Pour instancier une classe (c'est-à-dire pour créer un objet à partir d'une classe), vous devez :
+//insérer le code de la classe à l'aide d'une instruction include_once :
+//include_once(nom);
+//où nom est le nom du fichier dans lequel a été définie la classe.
+//Créer un objet avec l'instruction new :
+//$objet = new classe();
+//où objet est le nom de l'objet créé et classe le nom de la classe à utiliser comme modèle.
+//
+//  Accès aux méthodes et propriétés publiques
+//
+//  Pour accéder à une méthode ou une propriété publique, utilisez la syntaxe suivante :
+//$this -> nom;
+//
+//Où nom est le nom de la méthode ou de la propriété publique à accéder.
+//Vous pouvez par exemple :
+//
+//  Affecter une valeur à une propriété publique :
+//  $this -> nomPropriete = 10;
+//
+//  Afficher la valeur d'une propriété publique :
+//  echo $this -> nomPropriete;
+//
+//  Lancer une fonction publique :
+//  $this -> nomFonction();
+//
+//  Lancer une fonction publique en lui passant des paramètres :
+//  $this -> nomFonction("a", 15, "x");
+//
+//
+//
+//  Afficher la valeur retournée par une fonction publique :
+//  echo $this -> nomFonction();
+//
+///// ================================================================
+////      Constructeur & Destructeur
+//// ================================================================
+//
+//Le constructeur et le destructeur sont deux méthodes particulières dites "magiques".
+//Elles permettent respectivement d'initialiser un objet lors de sa création et d'effectuer les opérations nécessaires lors de sa destruction.
+//
+//Pour définir ces deux méthodes, vous utiliserez la syntaxe suivante :
+//
+//public function __construct(param1, param2, … paramN){
+//    // Une ou plusieurs instructions
+//  }
+//
+//public function __destruct(){
+//    //Une ou plusieurs instructions
+//  }
+//
+//Par exemple, le constructeur pourrait initialiser les propriétés membres en utilisant les paramètres qui lui sont transmis :
+//public function __construct($texte, $entier){
+//   $this -> chaine = $texte;
+//   $this -> numérique = $entier;
+// }
+//
+//Quant au destructeur, il pourrait par exemple fermer un fichier ou une base de données qui aurait été ouverte par les fonctions membres de la classe :
+// public function __destructor(){
+//    fclose($handle);
+//  }
+//
+//Remarque
+//Les méthodes __construct et __destruct commencent toutes deux par un double caractère de soulignement.
+//Il en est de même pour toutes les autres méthodes magiques.
+//Dans la mesure du possible, ne faites jamais commencer le nom de vos méthodes et fonctions par "__".
+//
+//Les autres méthodes magiques
+//
+//Plusieurs autres méthodes magiques peuvent être utilisées : __call(), __callStatic(), __get(), __set(), __isset(),
+//    __unset(), __sleep(), __wakeup(), __toString(), __invoke(), __set_state() et __clone(). Pour en savoir plus à leur sujet, consultez la page suivante :
+//
+//http://php.net/manual/fr/language.oop5.magic.php
+//
+///// ==========================================================================
+////        Tuto PHP/MySQL | Introduction aux services Web
+///// ========================================================================
+//
+//Le langage PHP permet de créer des services Web.
+//Mais au fait, savez-vous ce qu'est un service Web ? Il s'agit d'un programme libre d'accès,
+//qui s'exécute sur un serveur Web, et qui permet d'échanger des données avec le client qui l'interroge.
+//
+//Remarque
+//Pour être en mesure de créer et d'utiliser des services Web sur votre serveur local WAMPServer, vous devez activer l'extension SOAP.
+//Cliquez sur l'icône de WAMPServer dans la zone de notifications, pointez PHP, Extensions PHP et assurez-vous qu'une coche est affichée devant php_soap.
+//Dans le cas contraire :
+//
+//Fermez WAMPServer.
+//
+//Editez le fichier \wamp\bin\apache\Apache2.4.4\bin\php.ini.
+//Recherchez du terme "soap" et supprimez le ";" devant la ligne ;extension=php_soap.dll.
+//
+//Redémarrez WAMPServer.
+//
+///// ============================================================
+////        Tuto PHP/MySQL | Définition d'un service Web
+///// =============================================================
+//
+//Nous allons créer un service Web ultra simple qui retourne l'heure UTC.
+//Dans un premier temps, nous définissons la classe horloge qui contient une seule méthode publique nommée heure().
+//Cette méthode retourne l'heure au format UTC, en utilisant la fonction date() :
+//
+<?php
+
+    class horloge{
+
+      public function heure(){
+
+        return date("e H:i:s");
+      }
+    }
+//
+//Le service Web va reposer sur la classe horloge. Pour le mettre en place, quelques instructions PHP suffisent :
+//
+  try
+  {
+    $server = new SoapServer(null, array('uri' => 'http://localhost/POO/horloge.class.php'));
+
+    $server->setClass("horloge");
+
+    $server->handle();
+  }
+
+  catch(Exception $e)
+  {
+    echo "Exception: " . $e;
+  }
+  ?>
+//
+//Dans un premier temps, l'objet SoapServer $server est créé, en précisant l'adresse URI du service :
+//$server = new SoapServer(null, array('uri' => 'http://localhost/POO/horloge.class.php'));
+//La syntaxe de l'instanciation d'un l'objet SoapServer se trouve ici : http://www.php.net/manual/en/soapserver.soapserver.php.
+//Cinq syntaxes sont possibles. Les quatre premières utilisent un fichier WSDL (Web Service Description Language).
+//La cinquième syntaxe n'utilise pas de fichier WSDL.
+//Elle pointe vers l'URI de la classe utilisée pour définir le service Web.
+//Nous utiliserons cette syntaxe. Ici, la classe est stockée dans le fichier horloge.class.php,
+//qui se trouve dans le dossier POO du serveur Web local.
+//L'instruction suivante indique au serveur le nom de la classe qui gère les requêtes SOAP :
+//$server->setClass("horloge");
+//
+//Enfin, la dernière instruction s'occupe de toutes les tâches nécessaires pour gérer les requêtes SOAP :
+//$server->handle();
+//
+//L'instanciation de l'objet SoapServer se fait à l'intérieur d'une instruction try.
+//Si une erreur se produit, elle est capturée par l'instruction catch et affichée sur l'écran avec une instruction echo :
+//
+    catch(Exception $e)
+    {
+      echo "Exception: " . $e;
+    }
+//
+//Le service est entièrement défini. Sauvegardez-le sous le nom horloge.class.php et sauvegardez-le dans le dossier c:\wamp\www\POO\.
+//
+///// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+////       Tuto PHP/MySQL | Utiliser le service Web
+///// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//
+//Pour consommer le service, vous devez maintenant écrire un client en instanciant un objet SoapClient. Voici le code utilisé :
+//
+  <?php
+    try
+    {
+      echo "Le Webservice donne l'heure ";
+       $clientSOAP = new SoapClient( null,
+         array (
+           'uri' => 'http://localhost/',
+           'location' => 'http://localhost/POO/horloge.class.php',
+           'trace' => 1,
+           'exceptions' => 1
+         ));
+      $ret = $clientSOAP->__soapCall('heure', array());
+      echo $ret;
+    }
+    catch(SoapFault $f)
+    {
+      echo $f;
+    }
+  ?>
+//
+//La syntaxe de l'instanciation d'un objet SoapClient se trouve ici : http://php.net/manual/en/soapclient.soapclient.php.
+//Il ne reste plus qu'à appeler la méthode heure() de l'objet $clientSOAP :
+//$ret = $clientSOAP->__soapCall('heure', array());
+//Consultez la page http://www.php.net/manual/en/soapclient.soapcall.php pour en savoir plus sur cette méthode.
+//Le résultat retourné par la méthode est enfin affiché :
+//echo $ret;
+//Exécutons ce code dans WAMP Server.
+//L'heure UTC est immédiatement affichée.
+//Quelques secondes plus tard, vous pouvez appuyer sur la touche F5 pour mettre à jour na page et afficher à nouveau l'heure.
+//
